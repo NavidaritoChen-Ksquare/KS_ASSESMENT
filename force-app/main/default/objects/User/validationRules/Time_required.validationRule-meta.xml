@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_required</fullName>
+    <active>true</active>
+    <description>Prevent complete assesment without time used is fill</description>
+    <errorConditionFormula>AND( Assessment_Complete__c = true, ISNULL(Time_Used__c ) )</errorConditionFormula>
+    <errorMessage>Please fill Time used field</errorMessage>
+</ValidationRule>
