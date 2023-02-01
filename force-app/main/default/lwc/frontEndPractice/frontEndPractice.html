@@ -1,0 +1,23 @@
+<template>
+    <lightning-input type="text" style="width: 15% ;" label="Enter Contact Name" value={conName} onchange={handleChange}></lightning-input>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <template for:each={records} for:item="con">
+            <tr key={con.Id}>
+                <td>
+                    {con.Name}
+                </td>
+                <td>
+                    {con.Email}
+                </td>
+                <td>
+                    {con.Phone}
+                </td>
+            </tr>
+        </template>
+    </table>
+</template>
