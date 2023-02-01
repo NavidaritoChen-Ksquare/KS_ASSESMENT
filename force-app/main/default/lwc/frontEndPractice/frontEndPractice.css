@@ -1,0 +1,14 @@
+
+
+table {
+    border-collapse: collapse;
+    margin: 20px;
+  }
+
+.inputSearch{
+    display: inline-block;
+}
+
+button{
+    margin-top: 20px;
+}

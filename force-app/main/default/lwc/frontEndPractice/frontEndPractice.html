@@ -1,6 +1,18 @@
 <template>
-    <lightning-input type="text" style="width: 15% ;" label="Enter Contact Name" value={conName} onchange={handleChange}></lightning-input>
-    <table>
+    <lightning-card style="margin: 10px;" title="Contact Search">
+    <lightning-layout>
+   
+        <lightning-layout-item  padding="around-small" >
+        <lightning-input class="inputSearch" type="text"   value={conValue} onchange={handleChange} onkeypress={handleKeyPress}></lightning-input>
+         </lightning-layout-item>
+
+         <lightning-layout-item  padding="around-small">
+            
+            <lightning-button style="margin-top: 20px;" onclick={handleClick} label="Search"></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+   
+    <table style="margin: 20px;" >
         <tr>
             <th>Name</th>
             <th>Email</th>
@@ -9,10 +21,14 @@
         <template for:each={records} for:item="con">
             <tr key={con.Id}>
                 <td>
-                    {con.Name}
+                    
+                    <a href="">{con.Name}</a>
                 </td>
                 <td>
-                    {con.Email}
+                    
+
+                    <lightning-formatted-email value={con.Email} ></lightning-formatted-email>
+                    
                 </td>
                 <td>
                     {con.Phone}
@@ -20,4 +36,5 @@
             </tr>
         </template>
     </table>
+    </lightning-card>
 </template>
